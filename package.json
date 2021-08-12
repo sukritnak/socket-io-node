@@ -1,0 +1,24 @@
+{
+  "name": "simple-socket-io-node",
+  "version": "1.0.0",
+  "description": "mini chat socker io",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/sukrit.nak/socket-io-node.git"
+  },
+  "author": "ppla",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/sukrit.nak/socket-io-node/issues"
+  },
+  "homepage": "https://gitlab.com/sukrit.nak/socket-io-node#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "pug": "^3.0.2",
+    "socket.io": "^4.1.3"
+  }
+}
