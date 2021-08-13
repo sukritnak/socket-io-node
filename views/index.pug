@@ -3,8 +3,7 @@ html
     head
         title Chat Application Example by DEVAHOY
         link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.2/css/bulma.css')
-        link(rel='stylesheet' href='css/main.css')
-        script(src='https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js')
+        script(src='/socket.io/socket.io.js')
         script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js')
     body
         #chat-app
@@ -34,3 +33,20 @@ html
                         .content
                             p
                                 | Powered by PPLA
+            script.
+                const socket = io();
+                $('form').submit(() => {
+                    const name = $('#name').val();
+                    console.log(`name ${name}`);
+                    const message = $('#message').val();
+                    console.log(`message ${message}`);
+
+                socket.emit('chatter', `${name} : ${message}`);
+                    $('#message').val('');
+                    return false; 
+                });
+
+                socket.on('chatter', function(message) {
+                    console.log(`--> $message`);
+                    $('#chat-messages').append($('<li>').text(message));
+                });
